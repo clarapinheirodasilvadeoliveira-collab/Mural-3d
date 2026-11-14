@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mural Interativo 3D</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background-color: #f4f4f9; }
+    .cabecalho { background-color: #1e1e2f; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .cabecalho h1 { color: #fff; font-size: 24px; }
+    .cabecalho a { color: #fff; text-decoration: none; margin-left: 15px; }
+    .conteudo { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; padding: 30px; }
+    .cartao { width: 250px; height: 300px; perspective: 1000px; }
+    .cartao-interno { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+    .cartao:hover .cartao-interno, .cartao:focus-within .cartao-interno { transform: rotateY(180deg); }
+    .frente, .verso { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
+    .frente { background: #fff; color: #1e1e2f; }
+    .verso { background: #4a4e69; color: #fff; transform: rotateY(180deg); }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Meu Projeto</h1>
+    <nav><a href="#">Início</a><a href="#">Cartões</a></nav>
+  </header>
+  <main class="conteudo">
+    <div class="cartao" tabindex="0"><div class="cartao-interno"><div class="frente"><h2>HTML</h2><p>Passe o mouse</p></div><div class="verso"><h2>Estrutura</h2><p>Base da página web</p></div></div></div>
+    <div class="cartao" tabindex="0"><div class="cartao-interno"><div class="frente"><h2>CSS</h2><p>Passe o mouse</p></div><div class="verso"><h2>Estilo</h2><p>Flexbox e animação 3D</p></div></div></div>
+  </main>
+</body>
+</html>
